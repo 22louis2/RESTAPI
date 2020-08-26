@@ -9,7 +9,7 @@ namespace REST_API.Helper
     {
         public static void LoopFor(IEnumerable<string> result)
         {
-            foreach (var item in result.Distinct())
+            foreach (var item in result)
             {
                 Console.WriteLine(@$"
                             {item}");

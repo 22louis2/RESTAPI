@@ -13,33 +13,21 @@ namespace REST_API
         static async Task Main(string[] args)
         {
             Console.WriteLine("Waiting, currently loading data");
-
-            int pageNumber = 0;
+            
+            // API call, made the page number searches dynamic 
+            int pageNumber = 1;
             do
             {
-                await APIListController.GetAPIDetailsToList(++pageNumber);
+                await APIListController.GetAPIDetailsList(++pageNumber);
             }
+            /*
+             * Getting the total number of pages returned from the API call
+             * Setting the number of pages to be searched on
+             * Depending on the number of pages returned from the API call
+            */
             while (pageNumber != APIController.TotalPages);
-            
 
-            //var result = UserController.GetUsernames(400);
-            
-            //foreach(var item in result.Distinct())
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //var result2 = UserController.GetUsernameWithHighestCommentCount();
-
-            //Console.WriteLine(result2);
-
-            //var result3 = UserController.GetUsernamesSortedByRecordDate(100000);
-
-            //foreach(var item in result3)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
+            #region START OF USER INTERFACE APPLICATION
             Console.WriteLine(@"
                 -------------------------------------------------------
                             WELCOME TO API APPLICATION
@@ -64,17 +52,31 @@ namespace REST_API
                 -------------------------------------------------------
                 ");
 
+                /*
+                 * Getting the User Response from the given options
+                 * If user input is wrong, 
+                */
                 int.TryParse(Console.ReadLine(), out int response);
                  
                 if(response == 1)
                 {
+                    //Threshold:
                     Console.WriteLine("Enter Threshold");
 
                     int.TryParse(Console.ReadLine(), out int reply);
 
-                    var result = UserController.GetUsernames(reply);
+                    if(reply > 0)
+                    {
+                        var result = UserController.GetUsernames(reply);
 
-                    Utility.LoopFor(result);
+                        Utility.LoopFor(result);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter a value positive integer greater than 0");
+                       // goto Threshold;
+                    }
+                    
                 }
                 else if (response == 2)
                 {
@@ -85,21 +87,21 @@ namespace REST_API
                 } 
                 else if (response == 3)
                 {
-                Start:
+                //Start:
                     Console.WriteLine("Enter Threshold: Digit Length must be up to 10");
 
                     string reply = Console.ReadLine();
+                    long.TryParse(reply, out long res);
 
-                    if(reply.Length == 10)
+                    if (reply.Length == 10 && res > 0)
                     {
-                        int.TryParse(reply, out int res);
                         var result = UserController.GetUsernamesSortedByRecordDate(res);
                         Utility.LoopFor(result);
                     }                    
                     else
                     {
-                        Console.WriteLine("Please, Enter 10 digit numbers");
-                        goto Start;
+                        Console.WriteLine("Please, Enter 10 positive digit numbers");
+                        //goto Start;
                     }
                 } 
                 else if (response == 4)
@@ -110,7 +112,8 @@ namespace REST_API
                 {
                     Console.WriteLine("Enter a Valid Response");
                 }
-            } 
+            }
+            #endregion END OF USER INTERFACE APPLICATION
         }
     }
 }

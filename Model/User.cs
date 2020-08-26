@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace REST_API.Model
 {
     public class User
     {
-        public int id { get; set; }
-        public string username { get; set; }
-        public string about { get; set; }
-        public int submitted { get; set; }
-        public DateTime updated_at { get; set; }
-        public int submission_count { get; set; }
-        public int comment_count { get; set; }
-        public int created_at { get; set; }
+        [JsonPropertyName("id")]
+        public int ID { get; set; }
+        [JsonPropertyName("username")]
+        public string Username { get; set; }
+        [JsonPropertyName("about")]
+        public string About { get; set; }
+        [JsonPropertyName("submitted")]
+        public int Submitted { get; set; }
+        [JsonPropertyName("updated_at")]
+        public DateTime UpdatedAt { get; set; }
+        [JsonPropertyName("submission_count")]
+        public int SubmissionCount { get; set; }
+        [JsonPropertyName("comment_count")]
+        public int CommentCount { get; set; }
+        [JsonPropertyName("created_at")]
+        public int CreatedAt { get; set; }
     }
 }
 
