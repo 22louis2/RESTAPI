@@ -7,6 +7,10 @@ namespace REST_API.Model
 {
     public class User
     {
+        /*
+         * Change the names of properties when they are 
+         * Deserialized to Objects or Value Types
+        */
         [JsonPropertyName("id")]
         public int ID { get; set; }
         [JsonPropertyName("username")]

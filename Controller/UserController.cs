@@ -8,7 +8,6 @@ namespace REST_API.Controller
 {
     public class UserController : IUserController
     {
-        #region EXPLICIT INTERFACE IMPLEMENTATION
         /*
          * Explicit Interface Iimplementation
          * Using non-static methods, even if they do not access 
@@ -29,9 +28,6 @@ namespace REST_API.Controller
             return UserController.GetUsernamesSortedByRecordDate(threshold);
         }
 
-        #endregion END OF EXPLICIT INTERFACE IMPLEMENTATION
-
-        #region START OF METHODS IMPLEMENTED
         /*
          * Method to Retrieve the names of the most active authors using 
          * submission count as the criteria according to a set threshold
@@ -67,14 +63,19 @@ namespace REST_API.Controller
         * Method to Retrieve the names of authors sorted by when
         * their record was created according to a set threshold
        */
-        public static List<string> GetUsernamesSortedByRecordDate(long threshold)
+        public static List<string> GetUsernamesSortedByRecordDate(int threshold)
         {
+            // Setting a Date Time reference to 1970
             DateTime time = new DateTime(1970, 1, 1);
+            // Offsetting the Date reference into seconds from the given Date Time Reference
             DateTime userTime = time.AddSeconds(threshold);
 
             List<string> result = new List<string>();
 
-            // Query my User List using LINQ
+            /*
+             * Query my User List using LINQ and Offsetting the Date Time Reference 
+             * into seconds for Querying the List
+            */
             result = DB.User.Where(x => time.AddSeconds(x.CreatedAt) >= userTime)
                             .OrderByDescending(x => x.CreatedAt)
                             .Select(x => x.Username)
@@ -82,7 +83,5 @@ namespace REST_API.Controller
             // return the List populated result
             return result;
         }
-
-        #endregion END OF METHODS IMPLEMENTED
     }
 }

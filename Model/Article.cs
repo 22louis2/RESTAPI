@@ -8,6 +8,10 @@ namespace REST_API.Model
 {
     public class Article
     {
+        /*
+         * Change the names of properties when they are 
+         * Deserialized to Objects or Value Types
+        */
         [JsonPropertyName("page")]
         public string Page { get; set; }
         [JsonPropertyName("per_page")]

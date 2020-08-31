@@ -11,3 +11,16 @@ C:\Users\hp\source\repos\REST API\obj\Debug\netcoreapp3.1\REST API.csproj.CoreCo
 C:\Users\hp\source\repos\REST API\obj\Debug\netcoreapp3.1\REST API.dll
 C:\Users\hp\source\repos\REST API\obj\Debug\netcoreapp3.1\REST API.pdb
 C:\Users\hp\source\repos\REST API\obj\Debug\netcoreapp3.1\REST API.genruntimeconfig.cache
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.exe
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.deps.json
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.runtimeconfig.json
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.runtimeconfig.dev.json
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.dll
+C:\Users\hp\source\repos\week-6-task-22louis2\bin\Debug\netcoreapp3.1\REST API.pdb
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.AssemblyInfo.cs
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.dll
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.pdb
+C:\Users\hp\source\repos\week-6-task-22louis2\obj\Debug\netcoreapp3.1\REST API.genruntimeconfig.cache
